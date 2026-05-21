@@ -8,7 +8,7 @@ The platform provides full observability into every agent decision through an au
 
 ## Live Demo
 
-[https://axiom-ai.vercel.app](https://axiom-ai-rouge.vercel.app))
+[https://axiom-ai.vercel.app](https://axiom-ai-rouge.vercel.app)
 
 ## Key Features
 
