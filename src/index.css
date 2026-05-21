@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(50 50 62) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: rgb(50 50 62);
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgb(110 110 128);
+  }
+
+  body {
+    background: rgb(10 10 12);
+    color: rgb(240 240 245);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(34 211 238, 0.3);
+    color: rgb(240 240 245);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(18 18 22, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(40 40 50, 0.5);
+  }
+
+  .glass-panel-hover {
+    transition: all 0.2s ease;
+  }
+
+  .glass-panel-hover:hover {
+    background: rgba(24 24 30, 0.8);
+    border-color: rgba(50 50 62, 0.6);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(34 211 238, 0.15);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 20px rgba(52 211 153, 0.15);
+  }
+
+  .glow-amber {
+    box-shadow: 0 0 20px rgba(251 191 36, 0.15);
+  }
+
+  .stat-value {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(34 211 238, 0.3), rgba(52 211 153, 0.1), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
